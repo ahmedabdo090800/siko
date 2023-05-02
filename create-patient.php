@@ -30,7 +30,7 @@ if(!isset($_SESSION['username'])){
         <?php include('message.php'); ?>
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-6 m-auto">
                 <div class="card">
                     <div class="card-header">
                         <h4>Patient Add 
