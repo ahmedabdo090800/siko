@@ -5,7 +5,7 @@
                 <h3 style=" display:flex ; align-items: center; padding-top: 20px; padding-bottom: 40px;">
 
                     <?php
-                    echo 'Dr' . '.' . $_SESSION['username'];
+                    echo 'Mr' . '.' . $_SESSION['username'];
                     ?>
                 </h3>
             </div>
@@ -17,22 +17,16 @@
                     Dashboard
                 </a>
                 <a href="./patient.php" class="nav-link" id="patients">
-                    <div class="sb-nav-link-icon"><i class="fas fa-user-injured  hvr-icon"> </div></i>Patients
+                    <div class="sb-nav-link-icon"><i class="fas fa-user-injured  hvr-icon"> </div></i>Schedule Appointment
                 </a>
                 <a href="./appointment.php" class="nav-link" id="appointment">
-                    <div class="sb-nav-link-icon"><i class="far fa-calendar-check hvr-icon"></div></i>Appointment
+                    <div class="sb-nav-link-icon"><i class="far fa-calendar-check hvr-icon"></div></i> Add Appointment
                 </a>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                    Models AI
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                <a href="#" class="nav-link" id="appointment">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div></i>Settings
                 </a>
-                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="model2.php">Static Model</a>
-                        <a class="nav-link" href="skin_cancer.php">Skin Cancer</a>
-                    </nav>
-                </div>
+
+
                 <button style="width: 70%; " class="btn btn-primary m-auto mt-5 "><a style="text-decoration: none; color:white" href="logout-admin.php">logout</a></button>
 
 

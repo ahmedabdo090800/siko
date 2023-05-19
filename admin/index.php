@@ -50,6 +50,9 @@ mysqli_close($con);
                             <div class="col-xl-6 col-md-6">
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">appointement</div>
+                                    <h3>
+                                        Number : 3
+                                    </h3>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
