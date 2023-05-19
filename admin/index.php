@@ -18,6 +18,19 @@ if ($result=mysqli_query($con,$sql))
   }
 mysqli_close($con);
 
+
+
+$sql="SELECT scheduleId  FROM doctorschedule ORDER BY scheduleId ";
+
+if ($result=mysqli_query($con,$sql))
+  {
+  // Return the number of rows in result set
+  $rowcount=mysqli_num_rows($result);
+  // Free result set
+  mysqli_free_result($result);
+  }
+mysqli_close($con);
+
 ?>
 
 

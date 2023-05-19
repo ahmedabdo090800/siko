@@ -5,81 +5,35 @@ require 'connect.php';
 if (!isset($_SESSION['username'])) {
     header('location:login.php');
 }
-
-
-$login = 0;
-$invald = 0;
-
-
-
-
-
-if (isset($_POST['submit'])) {
-
-    $date = mysqli_real_escape_string($con, $_POST['date']);
-    $scheduleday  = mysqli_real_escape_string($con, $_POST['scheduleday']);
-    $starttime     = mysqli_real_escape_string($con, $_POST['starttime']);
-    $endtime     = mysqli_real_escape_string($con, $_POST['endtime']);
-    $bookavail         = mysqli_real_escape_string($con, $_POST['bookavail']);
-
-    //INSERT
-    $query = " INSERT INTO doctorschedule (  scheduleDate, scheduleDay, startTime, endTime,  bookAvail)
-    VALUES ( '$date', '$scheduleday', '$starttime', '$endtime', '$bookavail' ) ";
-
-    $result = mysqli_query($con, $query);
-    // echo $result;
-    if ($result) {
 ?>
-        <script type="text/javascript">
-            alert('Schedule added successfully.');
-        </script>
-    <?php
-    } else {
-    ?>
-        <script type="text/javascript">
-            alert('Added fail. Please try again.');
-        </script>
-<?php
-    }
-}
-?>
-
-
-
-
-
 
 <?php
 include('include/header.php')
 ?>
-                <div class="container-fluid">
-                    
-                    <!-- Page Heading -->
-            <div class="row">
+
+
+
+
+    <div class="container mb-5">
+
+        <?php include('message.php'); ?>
+
+        <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Add Appointment
-                            <a href="appointment view.php" class="btn btn-primary float-end"> Edit Appointments</a>
-                        </h4>
-                    </div>           <!-- Page Heading end-->
+                        <?php
+                        if (isset($_GET['id'])) {
+                            $doctorschedule_id = mysqli_real_escape_string($con, $_GET['id']);
+                            $query = "SELECT * FROM doctorschedule WHERE scheduleId ='$doctorschedule_id' ";
+                            $query_run = mysqli_query($con, $query);
 
-                    <!-- panel start -->
+                            if (mysqli_num_rows($query_run) > 0) {
+                                $doctorschedule  = mysqli_fetch_array($query_run);
+                        ?>
+                        <form action="appointment code.php" class="form-horizontal" method="post">
+                        <input type="hidden" name="scheduleId" value="<?= $doctorschedule['scheduleId']; ?>">
 
-<!-- panel start -->
-<div class="panel panel-primary">
-
-    <!-- panel heading starat -->
-
-    <!-- panel heading end -->
-
-    <div class="panel-body">
-        <!-- panel content start -->
-        <div class="bootstrap-iso">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-7 m-auto">
-                        <form class="form-horizontal" method="post">
                             <div class="form-group form-group-lg">
                                 <label class="control-label col-sm-2 requiredField" for="date">
                                     Date
@@ -92,7 +46,7 @@ include('include/header.php')
                                         <div class="input-group-addon">
 
                                         </div>
-                                        <input class="form-control" id="date" name="date" type="date" required />
+                                        <input name="scheduleId" value="<?= $doctorschedule['scheduleDate']; ?>" class="form-control" id="date" name="date" type="date" required />
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +58,7 @@ include('include/header.php')
                                     </span>
                                 </label>
                                 <div class="col-sm-10">
-                                    <select class="select form-control" id="scheduleday" name="scheduleday" required>
+                                    <select class="select form-control" id="scheduleday" name="scheduleDay" required>
                                         <option value="Monday">
                                             Monday
                                         </option>
@@ -142,7 +96,7 @@ include('include/header.php')
                                         <div class="input-group-addon">
 
                                         </div>
-                                        <input class="form-control" id="starttime" name="starttime" type="time" required />
+                                        <input name="startTime" value="<?= $doctorschedule['startTime']; ?>" class="form-control" id="starttime" name="starttime" type="time" required />
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +112,7 @@ include('include/header.php')
                                         <div class="input-group-addon">
 
                                         </div>
-                                        <input class="form-control" id="endtime" name="endtime" type="time" required />
+                                        <input name="endTime" value="<?= $doctorschedule['endTime']; ?>" class="form-control" id="endtime" name="endtime" type="time" required />
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +124,7 @@ include('include/header.php')
                                     </span>
                                 </label>
                                 <div class="col-sm-10">
-                                    <select class="select form-control" id="bookavail" name="bookavail" required>
+                                    <select class="select form-control" id="bookavail" name="bookAvail" required>
                                         <option value="available">
                                             available
                                         </option>
@@ -181,21 +135,28 @@ include('include/header.php')
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-sm-10 col-sm-offset-2">
-                                    <button class="btn btn-primary " name="submit" type="submit">
-                                        Submit
-                                    </button>
-                                </div>
-                            </div>
+                            <div class="mb-3">
+                                        <button type="submit" name="update_appointment" class="btn btn-primary">
+                                            Update appointment
+                                        </button>
+                                    </div>
                         </form>
+                        <?php
+                            } else {
+                                echo "<h4>No Such Id Found</h4>";
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- panel content end -->
-        <!-- panel end -->
     </div>
-</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
 
 
 
