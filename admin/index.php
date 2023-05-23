@@ -20,23 +20,18 @@ mysqli_close($con);
 
 
 
-$sql="SELECT scheduleId  FROM doctorschedule ORDER BY scheduleId ";
 
-if ($result=mysqli_query($con,$sql))
-  {
-  // Return the number of rows in result set
-  $rowcount=mysqli_num_rows($result);
-  // Free result set
-  mysqli_free_result($result);
-  }
-mysqli_close($con);
 
 ?>
 
 
 
+
+
 <?php
-    include('include/header.php')
+    include('include/header.php');
+
+
 ?>
 
 <div class="container-fluid px-4">
@@ -64,7 +59,9 @@ mysqli_close($con);
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">appointement</div>
                                     <h3>
-                                        Number : 3
+                                    Number : <?php
+                                            echo  3;
+                                        ?>
                                     </h3>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>

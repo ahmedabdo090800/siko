@@ -16,7 +16,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt "></i></div>
                     Dashboard
                 </a>
-                <a href="./patient.php" class="nav-link" id="patients">
+                <a href="./appointment-list.php" class="nav-link" id="patients">
                     <div class="sb-nav-link-icon"><i class="fas fa-user-injured  hvr-icon"> </div></i>Schedule Appointment
                 </a>
                 <a href="./appointment.php" class="nav-link" id="appointment">

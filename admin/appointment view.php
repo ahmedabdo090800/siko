@@ -37,6 +37,7 @@ if(!isset($_SESSION['username'])){
                                     <th>Start Time</th>
                                     <th>End Time</th>
                                     <th>Book Availilty</th>
+                                    <th>Operation</th>
                                 </tr>
                             </thead>
                             <tbody>
