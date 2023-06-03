@@ -22,7 +22,7 @@
                 <a href="./appointment.php" class="nav-link" id="appointment">
                     <div class="sb-nav-link-icon"><i class="far fa-calendar-check hvr-icon"></div></i> Add Appointment
                 </a>
-                <a href="#" class="nav-link" id="appointment">
+                <a href="setting.php" class="nav-link" id="appointment">
                     <div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div></i>Settings
                 </a>
 
