@@ -1,5 +1,7 @@
 <?php
 session_start();
+require 'connect.php';
+
 if(!isset($_SESSION['username'])){
     header('location:login.php');
 
@@ -11,6 +13,69 @@ if(!isset($_SESSION['username'])){
 <?php
     include('include/header.php')
 ?>
+
+
+
+    <div class="container mt-4">
+
+        <?php include('message.php'); ?>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>appointment  Details
+                        </h4>
+                    </div>
+                    <div class="card-body">
+
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Day</th>
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
+                                    <th>Book Availilty</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php 
+                                    $query = "SELECT * FROM doctorschedule";
+                                    $query_run = mysqli_query($con, $query);
+
+                                    if(mysqli_num_rows($query_run) > 0)
+                                    {
+                                        foreach($query_run as $doctorschedule)
+                                        {
+                                            ?>
+                                            <tr>
+                                                <td><?= $doctorschedule['scheduleDate']; ?></td>
+                                                <td><?= $doctorschedule['scheduleDay']; ?></td>
+                                                <td><?= $doctorschedule['startTime']; ?></td>
+                                                <td><?= $doctorschedule['endTime']; ?></td>
+                                                <td><?= $doctorschedule['bookAvail']; ?></td>
+
+                                            </tr>
+                                            <?php
+                                        }
+                                    }
+                                    else
+                                    {
+                                        echo "<h5> No Record Found </h5>";
+                                    }
+                                ?>
+                                
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
 

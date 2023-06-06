@@ -41,8 +41,12 @@ if(!isset($_SESSION['username'])){
                         <form action="code.php " method="POST">
 
                             <div class="mb-3">
-                                <label>Patient Name</label>
-                                <input type="text" name="name" class="form-control">
+                                <label>First Name</label>
+                                <input type="text" name="fname" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label>Last Name</label>
+                                <input type="text" name="lname" class="form-control">
                             </div>
 
                             <div class="mb-3">

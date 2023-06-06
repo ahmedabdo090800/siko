@@ -15,6 +15,10 @@ if(!isset($_SESSION['username'])){
 
 
 
+Full texts
+id	
+patientFirstName	
+patientLastName
 
 
 

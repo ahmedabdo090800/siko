@@ -29,7 +29,8 @@ if(isset($_POST['update_patient']))
     $patient_id = mysqli_real_escape_string($con, $_POST['patient_id']);
 
 
-    $name = mysqli_real_escape_string($con, $_POST['name']);
+    $fname = mysqli_real_escape_string($con, $_POST['fname']);
+    $lname = mysqli_real_escape_string($con, $_POST['lname']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $gender = mysqli_real_escape_string($con, $_POST['gender']);
     $address = mysqli_real_escape_string($con, $_POST['address']);
@@ -37,7 +38,7 @@ if(isset($_POST['update_patient']))
     $disease = mysqli_real_escape_string($con, $_POST['disease']);
     $phone = mysqli_real_escape_string($con, $_POST['phone']);
 
-    $query = "UPDATE  patient SET  name='$name', email='$email' , gender='$gender',address='$address', age='$age',disease='$disease',phone='$phone' WHERE id='$patient_id' ";
+    $query = "UPDATE  patient SET patientFirstName='$fname',patientLastName ='$lname', email='$email' , gender='$gender',address='$address', age='$age',disease='$disease',phone='$phone' WHERE id='$patient_id' ";
     $query_run = mysqli_query($con, $query);
 
     if($query_run)
@@ -59,7 +60,8 @@ if(isset($_POST['update_patient']))
 
 if(isset($_POST['save_Patient']))
 {
-    $name = mysqli_real_escape_string($con, $_POST['name']);
+    $fname = mysqli_real_escape_string($con, $_POST['fname']);
+    $lname = mysqli_real_escape_string($con, $_POST['lname']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $gender = mysqli_real_escape_string($con, $_POST['gender']);
     $address = mysqli_real_escape_string($con, $_POST['address']);
@@ -67,7 +69,7 @@ if(isset($_POST['save_Patient']))
     $disease = mysqli_real_escape_string($con, $_POST['disease']);
     $phone = mysqli_real_escape_string($con, $_POST['phone']);
 
-    $query = "INSERT INTO patient (name,email,age,gender,address,disease,phone) VALUES ('$name','$email','$age','$gender','$address','$disease','$phone')";
+    $query = "INSERT INTO patient (patientFirstName,patientLastName,email,age,gender,address,disease,phone) VALUES ('$fname','$lname','$email','$age','$gender','$address','$disease','$phone')";
 
     $query_run = mysqli_query($con, $query);
     if($query_run)

@@ -46,7 +46,8 @@ if(!isset($_SESSION['username'])){
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Patient Name</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
                                     <th>Phone</th>
                                     <th>Age</th>
                                     <th>disease</th>
@@ -65,7 +66,8 @@ if(!isset($_SESSION['username'])){
                                             ?>
                                             <tr>
                                                 <td><?= $patient['id']; ?></td>
-                                                <td><?= $patient['name']; ?></td>
+                                                <td><?= $patient['patientFirstName']; ?></td> 
+                                                <td><?= $patient['patientLastName']; ?></td> 
                                                 <td><?= $patient['phone']; ?></td>
                                                 <td><?= $patient['age']; ?></td>
                                                 <td><?= $patient['disease']; ?></td>
