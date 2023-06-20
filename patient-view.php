@@ -51,9 +51,15 @@ include('include/header.php')
                                     <input type="hidden" name="patient_id" value="<?= $patient['id']; ?>">
 
                                     <div class="mb-3">
-                                        <label>Name</label>
+                                        <label>First Name</label>
                                         <p class="form-control">
-                                        <?= $patient['name']; ?>
+                                        <?= $patient['patientFirstName']; ?>
+                                        </p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label>Last Name</label>
+                                        <p class="form-control">
+                                        <?= $patient['patientLastName']; ?>
                                         </p>
                                     </div>
                                     <div class="mb-3">

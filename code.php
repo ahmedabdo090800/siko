@@ -86,4 +86,38 @@ if(isset($_POST['save_Patient']))
     }
 }
 
+
+if(isset($_POST['update_doctor']))
+{
+    $doctorusername  = mysqli_real_escape_string($con, $_POST['username']);
+    $doctor_id  = mysqli_real_escape_string($con, $_POST['doctor_id']);
+    $doctorpassword = mysqli_real_escape_string($con, $_POST['password']);
+
+
+
+    $query = "UPDATE  doctor SET  username='$doctorusername', password='$doctorpassword' WHERE id='$doctor_id' ";
+    $query_run = mysqli_query($con, $query);
+
+    if($query_run)
+    ?>
+    <script type="text/javascript">
+        alert('Updating successfully,Please login again');
+        window.location="http://localhost/siko/login.php";
+    </script>
+
+<?php
+} else {
 ?>
+        $_SESSION['message'] = "  Not Updated";
+        header("Location: setting.php");
+        exit(0);
+<?php
+}
+
+
+
+
+
+
+
+

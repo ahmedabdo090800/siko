@@ -33,27 +33,27 @@ include('include/header.php')
 
 
 
-                    $query = "SELECT * FROM db_admin WHERE username= '$username' ";
+                    $query = "SELECT * FROM doctor WHERE username= '$username' ";
                     $query_run = mysqli_query($con, $query);
 
                     if (mysqli_num_rows($query_run) > 0) {
-                        $db_admin = mysqli_fetch_array($query_run);
+                        $doctor = mysqli_fetch_array($query_run);
                     ?>
-                        <form action="appointment code.php" method="POST">
-                            <input type="hidden" name="db_admin_id" value="<?= $db_admin['id']; ?>">
+                        <form action="code.php" method="POST" >
+                            <input type="hidden" name="doctor_id" value="<?= $doctor['id']; ?>">
 
                             <div class="mb-3">
                                 <label>UserName</label>
-                                <input type="text" name="username" value="<?= $db_admin['username']; ?>" class="form-control">
+                                <input type="text" name="username" value="<?= $doctor['username']; ?>" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label>Password</label>
-                                <input type="Password" name="password" value="<?= $db_admin['password']; ?>" class="form-control">
+                                <input type="Password" name="password" value="<?= $doctor['password']; ?>" class="form-control">
                             </div>
 
 
                             <div class="mb-3">
-                                <button type="submit" name="update_db_admin" class="btn btn-primary">
+                                <button type="submit" name="update_doctor" class="btn btn-primary">
                                     Update
                                 </button>
                             </div>
@@ -69,16 +69,7 @@ include('include/header.php')
 
 
             </div>
-            <div style="display: flex;align-items: center;justify-content: space-around; margin-top: 2rem;">
-            <div class="mb-3 ">
-                <a href="add admin.php"class="btn btn-info p-3 ">Add New Admin</a>
-            </div>
-
-            <div class="mb-3 ">
-                <a href="add doctor.php"class="btn btn-info p-3 ">Add New Doctor</a>
-            </div>
-
-
+            
         </div>
             </div>
 

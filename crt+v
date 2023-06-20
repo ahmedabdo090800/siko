@@ -1,3 +1,10 @@
+
+Full texts
+id	
+patientFirstName	
+patientLastName
+
+
 <?php
 session_start();
 if(!isset($_SESSION['username'])){
@@ -56,3 +63,54 @@ patientLastName
 
 </body>
 </html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+header('Content-Type: application/json');
+
+
+
+$host = 'sql307.epizy.com';
+$username = 'epiz_34317417';
+$password = 'J9UCGPBRepHg';
+$database = 'epiz_34317417_db_project';
+$conn = mysqli_connect($host, $username, $password, $database);
+
+if (!$conn) {
+    die('Connection failed: ' . mysqli_connect_error());
+}
+
+$name = $_POST['name'];
+$gender = $_POST['gender'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+
+$sql = "INSERT INTO app_appointment (name_app,gender_app, email_app, phone_app) VALUES ('$name','$gender', '$email', '$phone')";
+if (mysqli_query($conn, $sql)) {
+    $response = array('status' => 'success', 'message' => 'Data inserted successfully');
+} else {
+    $response = array('status' => 'error', 'message' => 'Error inserting data');
+}
+
+echo json_encode($response);
+
+mysqli_close($conn);
+?>

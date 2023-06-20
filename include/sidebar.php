@@ -22,6 +22,10 @@
                 <a href="./appointment.php" class="nav-link" id="appointment">
                     <div class="sb-nav-link-icon"><i class="far fa-calendar-check hvr-icon"></div></i>Appointment
                 </a>
+                </a>
+                <a href="setting.php" class="nav-link" id="setting">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div></i>Settings
+                </a>
 
                 <button style="width: 70%; " class="btn btn-primary m-auto mt-5 "><a style="text-decoration: none; color:white" href="logout.php">logout</a></button>
 

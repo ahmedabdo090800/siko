@@ -22,7 +22,9 @@ if(!isset($_SESSION['username'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
+    <link href="assets/css/datatables.min.css" rel="stylesheet"/>
+
 
     <title>Patient</title>
 </head>
@@ -42,7 +44,7 @@ if(!isset($_SESSION['username'])){
                     </div>
                     <div class="card-body">
 
-                        <table class="table table-bordered table-striped">
+                        <table id="datatableid" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -96,6 +98,19 @@ if(!isset($_SESSION['username'])){
             </div>
         </div>
     </div>
+
+
+
+
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
+    <script src="assets/js/datatables.min.js"></script>
+    
+    <script >
+     $(document).ready(function () {
+    $('datatableid').DataTable();
+});
+</script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 

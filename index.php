@@ -16,6 +16,19 @@ if ($result=mysqli_query($con,$sql))
   // Free result set
   mysqli_free_result($result);
   }
+
+
+
+
+$sql2="SELECT * FROM appointment";
+
+if ($result=mysqli_query($con,$sql2))
+  {
+  // Return the number of rows in result set
+  $rowcount2=mysqli_num_rows($result);
+  // Free result set
+  mysqli_free_result($result);
+  }
 mysqli_close($con);
 
 ?>
@@ -34,12 +47,12 @@ mysqli_close($con);
                         <div class="row">
                             <div class="col-xl-6 col-md-6">
                                 <div class="card bg-info text-white mb-4">
-                                    <div class="card-body">Patient</div>
-                                    <h3>
+                                    <div class="card-body"><h3>Patient</h3></div>
+                                    <h4 class="ml-5">
                                         Number : <?php
                                             echo $rowcount;
                                         ?>
-                                    </h3>
+                                    </h4>
 
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="patient.php">View Details</a>
@@ -49,9 +62,14 @@ mysqli_close($con);
                             </div>
                             <div class="col-xl-6 col-md-6">
                                 <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">appointement</div>
+                                    <div class="card-body"><h3>Appointement</h3></div>
+                                    <h4>
+                                        Number : <?php
+                                            echo $rowcount2;
+                                        ?>
+                                    </h4>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="appointment.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

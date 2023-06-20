@@ -72,18 +72,19 @@ if(isset($_POST['update_db_admin']))
     $query_run = mysqli_query($con, $query);
 
     if($query_run)
-    {
-        $_SESSION['message'] = " Updated Successfully";
-        header("Location: setting.php");
-        exit(0);
-    }
-    else
-    {
+    ?>
+    <script type="text/javascript">
+        alert('Updating successfully,Please login again');
+        window.location="http://localhost/siko/login.php";
+    </script>
+
+<?php
+} else {
+?>
         $_SESSION['message'] = "  Not Updated";
         header("Location: setting.php");
         exit(0);
-    }
-
+<?php
 }
 
 

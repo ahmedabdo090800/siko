@@ -50,11 +50,11 @@ include('include/header.php')
 
                                     <div class="mb-3">
                                         <label>First Name</label>
-                                        <input type="text" name="name" value="<?= $patient['patientFirstName']; ?>" class="form-control">
+                                        <input type="text" name="fname" value="<?= $patient['patientFirstName']; ?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <label>Last Name</label>
-                                        <input type="text" name="name" value="<?= $patient['patientLastName']; ?>" class="form-control">
+                                        <input type="text" name="lname" value="<?= $patient['patientLastName']; ?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <label>Email</label>
