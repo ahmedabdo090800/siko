@@ -20,7 +20,7 @@ if ($result=mysqli_query($con,$sql))
 
 
 
-$sql2="SELECT * FROM appointment";
+$sql2="SELECT * FROM doctorschedule WHERE DATE (scheduleDate)=CURDATE()" ;
 
 if ($result=mysqli_query($con,$sql2))
   {
@@ -62,7 +62,7 @@ mysqli_close($con);
                             </div>
                             <div class="col-xl-6 col-md-6">
                                 <div class="card bg-success text-white mb-4">
-                                    <div class="card-body"><h3>Appointement</h3></div>
+                                    <div class="card-body"><h3>Today's Appointement</h3></div>
                                     <h4>
                                         Number : <?php
                                             echo $rowcount2;

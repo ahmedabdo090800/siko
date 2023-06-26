@@ -69,16 +69,30 @@ if(!isset($_SESSION['username'])){
                                 <input type="text" name="address" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label>Diagnoses</label>
-                                <textarea class="form-control" name="disease" cols="20" rows="5"></textarea>
-                            </div>
-                            
-
-                            
-                            <div class="mb-3">
                                 <label>Phone</label>
                                 <input type="text" name="phone" class="form-control">
                             </div>
+                            <div class="mb-3">
+                                <label>Diagnoses</label>
+                                <textarea class="form-control" name="disease" cols="20" rows="5"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label>Medicine</label>
+                                <input type="text" name="medicine" class="form-control">
+
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label>chronic diseases</label>
+                                <input type="text" name="chronic" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label>notes</label>
+                                <textarea class="form-control" name="notes" cols="20" rows="5"></textarea>
+                            </div>
+
+                            
 
                             <div class="mb-3">
                                 <button type="submit" name="save_Patient" class="btn btn-primary">Save Patient</button>

@@ -51,17 +51,12 @@ include('include/header.php')
                                     <input type="hidden" name="patient_id" value="<?= $patient['id']; ?>">
 
                                     <div class="mb-3">
-                                        <label>First Name</label>
+                                        <label>Full Name</label>
                                         <p class="form-control">
-                                        <?= $patient['patientFirstName']; ?>
+                                        <?= $patient['patientFirstName'] ." ".$patient['patientLastName']; ?>
                                         </p>
                                     </div>
-                                    <div class="mb-3">
-                                        <label>Last Name</label>
-                                        <p class="form-control">
-                                        <?= $patient['patientLastName']; ?>
-                                        </p>
-                                    </div>
+
                                     <div class="mb-3">
                                         <label>Email</label>
                                         <p class="form-control">
@@ -99,8 +94,8 @@ include('include/header.php')
 
 
                                     <div class="mb-3" style="text-align: center;">
-                                        <label class="h2">Disease</label>
-                                        <p class="h5 mt-3">
+                                        <label class="h4">Disease</label>
+                                        <p class="h5">
                                         <?= $patient['disease']; ?>
                                         </p>
                                     </div>
@@ -143,9 +138,7 @@ include('include/header.php')
 
 
 
-<?php
-include('include/footer.php')
-?>
+
 <?php
 include('include/script.php')
 ?>

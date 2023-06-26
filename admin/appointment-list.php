@@ -23,7 +23,7 @@ if(!isset($_SESSION['username'])){
                     </div>
                     <div class="card-body">
 
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-bordered ">
                         <thead>
                                 <tr class="filters">
                                     <th class="col-1"><input type="text" class="form-control" placeholder="Name" disabled></th>
@@ -48,7 +48,7 @@ if(!isset($_SESSION['username'])){
                                                     On a.icPatient = b.patientIc
                                                     JOIN doctorschedule c
                                                     On b.scheduleId=c.scheduleId
-                                                    Order By appId desc");
+                                                    Order By scheduleDate DESC");
                                   if (!$res) {
                                     printf("Error: %s\n", mysqli_error($con));
                                     exit();
@@ -88,7 +88,7 @@ if(!isset($_SESSION['username'])){
         
                             }
 
-                            $query = "SELECT * FROM app_appointment";
+                            $query = "SELECT * FROM app_appointment Order By date_app DESC";
                             $query_run = mysqli_query($con, $query);
 
                             if(mysqli_num_rows($query_run) > 0)

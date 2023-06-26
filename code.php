@@ -68,8 +68,11 @@ if(isset($_POST['save_Patient']))
     $age = mysqli_real_escape_string($con, $_POST['age']);
     $disease = mysqli_real_escape_string($con, $_POST['disease']);
     $phone = mysqli_real_escape_string($con, $_POST['phone']);
+    $notes = mysqli_real_escape_string($con, $_POST['notes']);
+    $medicine = mysqli_real_escape_string($con, $_POST['medicine']);
+    $chronic = mysqli_real_escape_string($con, $_POST['chronic']);
 
-    $query = "INSERT INTO patient (patientFirstName,patientLastName,email,age,gender,address,disease,phone) VALUES ('$fname','$lname','$email','$age','$gender','$address','$disease','$phone')";
+    $query = "INSERT INTO patient (patientFirstName,patientLastName,email,age,gender,address,disease,phone,notes,medicine,chronic) VALUES ('$fname','$lname','$email','$age','$gender','$address','$disease','$phone','$notes','$medicine','$chronic')";
 
     $query_run = mysqli_query($con, $query);
     if($query_run)
@@ -113,6 +116,10 @@ if(isset($_POST['update_doctor']))
         exit(0);
 <?php
 }
+
+
+
+
 
 
 

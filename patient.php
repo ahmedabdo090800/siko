@@ -93,6 +93,10 @@ if(!isset($_SESSION['username'])){
                             </tbody>
                         </table>
 
+                        <h4> 
+                            <a href="search.php" class="btn btn-dark float-end">Search</a>
+                        </h4>
+
                     </div>
                 </div>
             </div>

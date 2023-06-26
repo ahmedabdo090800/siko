@@ -39,9 +39,16 @@ if(!isset($_SESSION['username'])){
                                     <th>Book Availilty</th>
                                 </tr>
                             </thead>
+                            
                             <tbody>
                                 <?php 
-                                    $query = "SELECT * FROM doctorschedule";
+                                    $query = "SELECT a.*, b.*,c.*
+                                    FROM patient a
+                                    JOIN appointment b
+                                    On a.icPatient = b.patientIc
+                                    JOIN doctorschedule c
+                                    On b.scheduleId=c.scheduleId
+                                    WHERE DATE (scheduleDate)=CURDATE()";
                                     $query_run = mysqli_query($con, $query);
 
                                     if(mysqli_num_rows($query_run) > 0)
@@ -62,7 +69,7 @@ if(!isset($_SESSION['username'])){
                                     }
                                     else
                                     {
-                                        echo "<h5> No Record Found </h5>";
+                                        echo "<h5> No Appointments Today </h5>";
                                     }
                                 ?>
                                 
